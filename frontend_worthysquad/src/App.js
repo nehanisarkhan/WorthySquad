@@ -1,7 +1,9 @@
 import React from "react";
-import Navbar from "./Components/Navbar";
+import Header from "./Components/Header";
+// import EventDetails from "./Components/EventDetails";
+// import Navbar from "./Components/Navbar";
 
 const App = () => {
-  return <Navbar />;
+  return <Header />;
 };
 export default App;
