@@ -1,4 +1,4 @@
-export const storeEvents = [
+export const Events = [
   {
     id: 1,
     category: "food and hunger",
@@ -11,14 +11,14 @@ export const storeEvents = [
     id: 2,
     category: "education",
     title: " donate towards educating a child",
-    img: "https://source.unsplash.com/600x600/?school",
+    img: "https://bsmedia.business-standard.com/_media/bs/img/article/2019-10/21/full/1571637856-8941.jpg",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste at iure quam eligendi dolorum. Tempore animi consequatur ut vitae esse ipsa eligendi illo explicabo delectus beatae, sint provident? Iure, minima!",
   },
   {
     id: 3,
     category: "medical",
-    title: "Help this 20 year old for kidney transplant",
+    title: "Help this 20 year old get a kidney transplant",
     img: "https://st3.depositphotos.com/12039478/15197/i/1600/depositphotos_151978728-stock-photo-sick-man-in-hospital.jpg",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste at iure quam eligendi dolorum. Tempore animi consequatur ut vitae esse ipsa eligendi illo explicabo delectus beatae, sint provident? Iure, minima!",
