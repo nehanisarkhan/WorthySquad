@@ -1,35 +1,33 @@
 import React from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Button, Card } from "react-bootstrap";
 
 const EventDetails = () => {
   return (
-    <div>
-      <Container>
-        <Row>
-          <Col xs={6} md={4}>
-            <Image
-              src="https://www.cnet.com/a/img/-e95qclc6pwSnGE2YccC2oLDW_8=/1200x675/2020/04/16/7d6d8ed2-e10c-4f91-b2dd-74fae951c6d8/bazaart-edit-app.jpg"
-              roundedCircle
-              fluid
-            />
-          </Col>
-          <Col xs={6} md={4}>
-            <Image
-              src="https://www.cnet.com/a/img/-e95qclc6pwSnGE2YccC2oLDW_8=/1200x675/2020/04/16/7d6d8ed2-e10c-4f91-b2dd-74fae951c6d8/bazaart-edit-app.jpg"
-              roundedCircle
-              fluid
-            />
-          </Col>
-          <Col xs={6} md={4}>
-            <Image
-              src="https://www.cnet.com/a/img/-e95qclc6pwSnGE2YccC2oLDW_8=/1200x675/2020/04/16/7d6d8ed2-e10c-4f91-b2dd-74fae951c6d8/bazaart-edit-app.jpg"
-              roundedCircle
-              fluid
-            />
-          </Col>
-        </Row>
-      </Container>
-    </div>
+    <Container>
+      <Card>
+        <Card.Img
+          variant="top"
+          src="https://images.unsplash.com/photo-1612151855475-877969f4a6cc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGQlMjBpbWFnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+          fluid
+        />
+        <Card.Title>This is title</Card.Title>
+        <Card.Body>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel,
+          similique.
+        </Card.Body>
+      </Card>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          alignContent: "flex-start",
+          margin: "8px",
+        }}
+      >
+        <Button variant="secondary">Donate</Button>
+        <Button variant="secondary">Volunteer</Button>
+      </div>
+    </Container>
   );
 };
 

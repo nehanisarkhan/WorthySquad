@@ -47,9 +47,17 @@ export const Events = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste at iure quam eligendi dolorum. Tempore animi consequatur ut vitae esse ipsa eligendi illo explicabo delectus beatae, sint provident? Iure, minima!",
   },
+  {
+    id: 7,
+    category: "memorial",
+    title: " trees",
+    img: "https://compote.slate.com/images/c465d192-5e36-4533-90fc-e198da3f061a.jpeg?width=780&height=520&rect=1560x1040&offset=0x0",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste at iure quam eligendi dolorum. Tempore animi consequatur ut vitae esse ipsa eligendi illo explicabo delectus beatae, sint provident? Iure, minima!",
+  },
 ];
 
-export const detailMovie = {
+export const detailEvent = {
   id: 1,
   category: "food and hunger",
   title: "Feeding From Far-Ration Distribution Amid Lockdown",
