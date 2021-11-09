@@ -14,7 +14,7 @@ function Sponsors() {
             height="200px"
             width="600px"
             alt="First slide"
-            slidesToShow={2}
+            // slidestoShow={2}
           />
           {/* <Carousel.Caption>
             <h5>First slide label</h5>
@@ -37,7 +37,9 @@ function Sponsors() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="holder.js/800x400?text=Third slide&bg=e5e5e5"
+            src="https://images.pexels.com/photos/3631430/pexels-photo-3631430.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+            height="200px"
+            width="600px"
             alt="Third slide"
           />
           {/* <Carousel.Caption> */}
