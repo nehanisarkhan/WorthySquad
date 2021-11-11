@@ -84,7 +84,7 @@ class EventProvider extends Component {
           handleDetail: this.handleDetail,
         }}
       >
-        {this.props.children}{" "}
+        {this.props.children}
         {/*this will get all the components present inside provider component */}
       </EventContext.Provider>
     );
