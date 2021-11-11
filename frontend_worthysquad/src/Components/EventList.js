@@ -19,10 +19,10 @@ const EventList = () => {
 
   const filterItem = (category) => {
     if (category === "All") {
-      setEventsData(Events);
-      return;
+      return setEventsData(Events);
     }
-    const updatedList = eventsData.filter((curElem) => {
+
+    const updatedList = Events.filter((curElem) => {
       return curElem.category === category; //only those data is filtered whose category matches with the input category
     });
     setEventsData(updatedList); //this will put the value of updated list in setEventsData which in turn change the value of eventsData and only updatedlist values will be displayed
@@ -32,7 +32,7 @@ const EventList = () => {
       <div className="container p-5 m-5 g-5 ">
         <div className="row g-5">
           <Category filterItem={filterItem} list={list} />
-          <Event events={eventsData} key={eventsData.id} />
+          <Event eventsData={eventsData} key={eventsData.id} />
         </div>
       </div>
     </>

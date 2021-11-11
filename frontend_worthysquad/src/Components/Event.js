@@ -1,10 +1,10 @@
 import React from "react";
 import { Card, Button, Nav } from "react-bootstrap";
 
-const Event = ({ events }) => {
+const Event = ({ eventsData }) => {
   return (
     <>
-      {events.map((item) => {
+      {eventsData.map((item) => {
         return (
           <React.Fragment>
             <Card style={{ width: "16rem" }}>
