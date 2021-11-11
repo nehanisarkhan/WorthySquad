@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Button, Nav } from "react-bootstrap";
 import { EventConsumer } from "../Context";
+import { Link } from "react-router-dom";
 
 const Event = (props) => {
   const { id, title, img, category } = props.event;
@@ -15,14 +16,14 @@ const Event = (props) => {
               <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text className="text-muted">{category}</Card.Text>
-                <Nav.Link href="/eventDetails">
+                <Link to="/eventDetails">
                   <Button
                     variant="secondary"
                     onClick={() => value.handleDetail(id)}
                   >
                     Check Details
                   </Button>
-                </Nav.Link>
+                </Link>
               </Card.Body>
             </Card>
           )}
