@@ -1,10 +1,10 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Nav } from "react-bootstrap";
 
-const Event = ({ events }) => {
+const Event = ({ eventsData }) => {
   return (
     <>
-      {events.map((item) => {
+      {eventsData.map((item) => {
         return (
           <React.Fragment>
             <Card style={{ width: "16rem" }}>
@@ -12,7 +12,9 @@ const Event = ({ events }) => {
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 {/* <Card.Text>{item.description}</Card.Text> */}
-                <Button variant="primary">Check Details</Button>
+                <Nav.Link href="/eventDetails">
+                  <Button variant="secondary">Check Details</Button>
+                </Nav.Link>
               </Card.Body>
             </Card>
           </React.Fragment>
