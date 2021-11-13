@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Components/Header";
 import Sponsors from "./Components/Sponsors";
@@ -8,8 +8,8 @@ import { Button } from "react-bootstrap";
 import { FooterContainer } from "./containers/footer";
 
 function Homepage() {
-    return (
-        <div className="App">
+  return (
+    <div className="App">
       <Header />
       <div>
         <Carousel1 />
@@ -32,7 +32,7 @@ function Homepage() {
         </div>
       </div>
     </div>
-    )
+  );
 }
 
 export default Homepage;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Nav } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { EventConsumer } from "../Context";
 import { Link } from "react-router-dom";
 
@@ -14,8 +14,10 @@ const Event = (props) => {
             <Card style={{ width: "16rem" }}>
               <Card.Img variant="top" src={img} />
               <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text className="text-muted">{category}</Card.Text>
+                <Card.Title classNmae="text-capitalize">{title}</Card.Title>
+                <Card.Text className="text-muted text-capitalize">
+                  {category}
+                </Card.Text>
                 <Link to="/eventDetails">
                   <Button
                     variant="secondary"
