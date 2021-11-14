@@ -3,28 +3,50 @@ import { useState } from "react";
 import axios from "axios";
 
 function SignUp() {
-  const [name, setName] = useState("");
-  const [lname, setLname] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
-  async function submit() {
-    try {
-      await axios.post("https://worthysquad.herokuapp.com/api/signup/", {
-        name,
-        lname,
-        email,
-        password,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  const submit = (e) => {
+    e.preventDefault();
+    console.log("values", firstName);
+    axios
+      .post("https://worthysquad.herokuapp.com/api/signup/", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          password,
+          email,
+        }),
+      })
+      .then((response) => {
+        // setName(response.data);
+        // setLname(response.data);
+
+        console.log(response.data, "heloooo");
+      })
+      .catch((err) => console.error(err));
+  };
+
+  // try {
+  //   await axios.post("https://worthysquad.herokuapp.com/api/signup", {
+  //     firstName,
+  //     lastName,
+  //     email,
+  //     password,
+  //   });
+  // } catch (error) {
+  //   console.log(error);
+  // }
 
   return (
     <div>
       <form
-        onSubmit={submit}
+        // onSubmit={submit}
         style={{
           display: "grid",
           justifyContent: "center",
@@ -32,33 +54,36 @@ function SignUp() {
           marginTop: "100px",
           gap: "5px",
         }}
+        method="post"
       >
         <input
           type="text"
           placeholder="name"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
         />
         <input
           type="text"
           placeholder="lname"
-          onChange={(e) => setLname(e.target.value)}
-          value={lname}
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
         />
         <input
           type="text"
           placeholder="email"
-          onChange={(e) => setEmail(e.target.value)}
           value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
           type="text"
           placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
           value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <button>submit</button>
+        <button type="submit" onClick={submit}>
+          submit
+        </button>
       </form>
     </div>
   );
