@@ -1,6 +1,6 @@
 import React from "react";
 import Event from "./Event";
-import Category from "./Category";
+// import Category from "./Category";
 import { EventConsumer } from "../Context";
 
 const EventList = () => {
@@ -10,9 +10,6 @@ const EventList = () => {
         <div className="row g-5">
           <EventConsumer>
             {(value) => {
-              // return value.list.map((lists) =>
-              // return <Category event={value.lists} />;
-
               return value.events.map((event) => {
                 return <Event key={event.id} event={event} />;
               });

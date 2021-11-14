@@ -8,10 +8,10 @@ const Header = () => {
           <Navbar.Brand href="/">WorthySquad</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#features">About</Nav.Link>
+            <Nav.Link href="/about">About</Nav.Link>
             <Nav.Link href="/eventlist">Events</Nav.Link>
-            <Nav.Link href="#donate">Donate</Nav.Link>
-            <Nav.Link href="#volunteer">Volunteer</Nav.Link>
+            <Nav.Link href="/donate">Donate</Nav.Link>
+            <Nav.Link href="/volunteer">Volunteer</Nav.Link>
           </Nav>
           <Navbar.Collapse className="justify-content-end">
             <Nav>

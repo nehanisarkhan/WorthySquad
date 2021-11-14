@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Button, Card } from "react-bootstrap";
+import { Container, Button, Card, Nav } from "react-bootstrap";
 import { EventConsumer } from "../Context";
 
 const EventDetails = (props) => {
@@ -22,8 +22,12 @@ const EventDetails = (props) => {
                 margin: "8px",
               }}
             >
-              <Button variant="secondary">Donate</Button>
-              <Button variant="secondary">Volunteer</Button>
+              <Nav.Link href="/donate">
+                <Button variant="secondary">Donate</Button>
+              </Nav.Link>
+              <Nav.Link href="/volunteer">
+                <Button variant="secondary">Volunteer</Button>
+              </Nav.Link>
             </div>
           </Container>
         );

@@ -1,7 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "./Components/Header";
-import Sponsors from "./Components/Sponsors";
+// import Sponsors from "./Components/Sponsors";
 import Carousel1 from "./Components/Carousel1";
 import "./Components/Carousel1";
 import { Button } from "react-bootstrap";
