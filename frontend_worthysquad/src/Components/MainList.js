@@ -8,19 +8,12 @@ const MainList = () => {
   return (
     <>
       <div className="container p-5 m-5 g-5">
-        <div className="row g-5">
-          <EventConsumer>
-            {(value) => {
-              // return value.list.map((lists) =>
-              return <Category list={value.list} />;
-
-              // return value.events.map((event) => {
-              //   return <Event key={event.id} event={event} />;
-              // });
-            }}
-          </EventConsumer>
-          <EventList />
-        </div>
+        <EventConsumer>
+          {(value) => {
+            return <Category list={value.list} />;
+          }}
+        </EventConsumer>
+        <EventList />
       </div>
     </>
   );

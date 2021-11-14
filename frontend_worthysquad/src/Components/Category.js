@@ -11,6 +11,7 @@ const Category = ({ list }) => {
               {list.map((curElem) => {
                 return (
                   <Button
+                    className="text-capitalize"
                     variant="secondary"
                     onClick={() => value.filterItem(curElem)}
                   >

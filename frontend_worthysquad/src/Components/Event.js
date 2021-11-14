@@ -14,7 +14,7 @@ const Event = (props) => {
             <Card style={{ width: "16rem" }}>
               <Card.Img variant="top" src={img} />
               <Card.Body>
-                <Card.Title classNmae="text-capitalize">{title}</Card.Title>
+                <Card.Title className="text-capitalize">{title}</Card.Title>
                 <Card.Text className="text-muted text-capitalize">
                   {category}
                 </Card.Text>
