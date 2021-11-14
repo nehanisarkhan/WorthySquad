@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import { Events, detailEvent } from "./data";
 
+const uniqueList = [
+  ...new Set(
+    Events.map((curElem) => {
+      return curElem.category;
+    })
+  ),
+  "All",
+];
+
 const EventContext = React.createContext(); //context object
 //context object has two components :-
 //Provider
@@ -12,7 +21,7 @@ class EventProvider extends Component {
   state = {
     events: [],
     detailEvent: detailEvent,
-    list: this.uniqueList,
+    list: uniqueList,
   };
   //component lifecycle method
   componentDidMount() {
@@ -29,24 +38,22 @@ class EventProvider extends Component {
     });
   };
   //get the list of category types
-  uniqueList = [
-    ...new Set(
-      Events.map((curElem) => {
-        return curElem.category;
-      })
-    ),
-    "All",
-  ];
 
   filterItem = (category) => {
     if (category === "All") {
-      this.setEvents(Events);
-      return;
+      this.setState(() => {
+        return { event: Events };
+      });
+      // this.setEvents(Events);
+      // return;
     }
-    const updatedList = this.events.filter((curElem) => {
+    const updatedList = this.state.events.filter((curElem) => {
       return curElem.category === category; //only those data is filtered whose category matches with the input category
     });
-    this.setEvents(updatedList); //this will put the value of updated list in setEventsData which in turn change the value of eventsData and only updatedlist values will be displayed
+    // this.setEvents(updatedList); //this will put the value of updated list in setEvents  which in turn change the value of eventsData and only updatedlist values will be displayed
+    this.setState(() => {
+      return { event: updatedList };
+    });
   };
 
   //function to get items of particular id

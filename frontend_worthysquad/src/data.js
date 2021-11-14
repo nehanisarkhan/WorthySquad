@@ -19,7 +19,8 @@ export const Events = [
     id: 3,
     category: "medical",
     title: "Help this 20 year old get a kidney transplant",
-    img: "https://st3.depositphotos.com/12039478/15197/i/1600/depositphotos_151978728-stock-photo-sick-man-in-hospital.jpg",
+    img: "https://bsmedia.business-standard.com/_media/bs/img/article/2019-10/21/full/1571637856-8941.jpg",
+
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste at iure quam eligendi dolorum. Tempore animi consequatur ut vitae esse ipsa eligendi illo explicabo delectus beatae, sint provident? Iure, minima!",
   },
@@ -35,7 +36,7 @@ export const Events = [
     id: 5,
     category: "animals",
     title: "Help Support A Sanctuary For 134 Cats In Allahabad!",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRulYzxF3q60Mv7cbIHRM9IdDGcoO8PL38H0g&usqp=CAU",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5yitllHVfscCNAe9KyHoXdW3umImbBkEeAA&usqp=CAU",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste at iure quam eligendi dolorum. Tempore animi consequatur ut vitae esse ipsa eligendi illo explicabo delectus beatae, sint provident? Iure, minima!",
   },
