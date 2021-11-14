@@ -9,29 +9,17 @@ import { FooterContainer } from "./containers/footer";
 
 function Homepage() {
   return (
-    <div className="App">
-      <Header />
+    <>
       <div>
         <Carousel1 />
-
-        <div className="Container">
-          <Sponsors />
-          <br />
-          <div>
-            <h2>Join Us</h2>
-            <Button>Donate</Button> <Button>Volunteer</Button>
-            {/* <Footer /> */}
-            <br />
-            <br />
-            <br />
-            <br />
-            <>
-              <FooterContainer />
-            </>
-          </div>
-        </div>
+        {/* <Sponsors /> */}
+        <h2>Join Us</h2>
+        <Button>Donate</Button>
+        <Button>Volunteer</Button>
+        {/* <Footer /> */}
+        <FooterContainer />
       </div>
-    </div>
+    </>
   );
 }
 

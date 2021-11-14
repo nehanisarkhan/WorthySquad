@@ -1,101 +1,65 @@
-import React, { useState } from "react";
-
-import { Form, Col, Button } from "react-bootstrap";
+import { useState } from "react";
+// import "./App.css";
+import axios from "axios";
 
 function SignUp() {
-  const [inputs, setInputs] = useState([]);
+  const [name, setName] = useState("");
+  const [lname, setLname] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
-  };
-
-  const [validated, setValidated] = useState(false);
-
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      //   event.stopPropagation();
+  async function submit() {
+    try {
+      await axios.post("https://worthysquad.herokuapp.com/api/signup/", {
+        name,
+        lname,
+        email,
+        password,
+      });
+    } catch (error) {
+      console.log(error);
     }
-    console.log(inputs);
-    setValidated(true);
-  };
+  }
 
   return (
-    <div
-      style={{
-        display: "grid",
-        placeContent: "center",
-        marginTop: "80px",
-        border: "1px solid gray",
-        padding: "10px",
-      }}
-    >
-      <h1 style={{ marginBottom: "8px" }}>Sign Up !</h1>
-      <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <Form.Group as={Col} controlId="validationCustom01">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="First Name"
-            defaultValue=""
-            name="fname"
-            value={inputs.fname || ""}
-            onChange={handleChange}
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} controlId="validationCustom02">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Last Name"
-            defaultValue=""
-            name="lname"
-            value={inputs.lname || ""}
-            onChange={handleChange}
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} controlId="validationCustom03">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Email"
-            defaultValue=""
-            name="email"
-            value={inputs.email || ""}
-            onChange={handleChange}
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group
-          as={Col}
-          controlId="validationCustom04"
-          //   style={{ marginTop: "5px", marginBottom: "8px" }}
-        >
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Password"
-            defaultValue=""
-            name="password"
-            value={inputs.password || ""}
-            onChange={handleChange}
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
+    <div>
+      <form
+        onSubmit={submit}
+        style={{
+          display: "grid",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "100px",
+          gap: "5px",
+        }}
+      >
+        <input
+          type="text"
+          placeholder="name"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+        />
+        <input
+          type="text"
+          placeholder="lname"
+          onChange={(e) => setLname(e.target.value)}
+          value={lname}
+        />
+        <input
+          type="text"
+          placeholder="email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
 
-        <Button variant="secondary" type="submit" style={{ marginTop: "8px" }}>
-          SignUp
-        </Button>
-      </Form>
+        <input
+          type="text"
+          placeholder="password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+        <button>submit</button>
+      </form>
     </div>
   );
 }
