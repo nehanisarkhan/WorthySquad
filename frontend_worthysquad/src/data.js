@@ -1,6 +1,10 @@
 export const Events = [
   {
     id: 1,
+    location: {
+      lat: "12",
+      long: "13",
+    },
     category: "food and hunger",
     title: "Feeding From Far-Ration Distribution Amid Lockdown",
     img: "https://bsmedia.business-standard.com/_media/bs/img/article/2017-08/25/full/1503608938-598.jpg",
