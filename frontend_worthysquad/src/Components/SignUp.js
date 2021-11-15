@@ -12,16 +12,11 @@ function SignUp() {
     e.preventDefault();
     console.log("values", firstName);
     axios
-      .post("https://worthysquad.herokuapp.com/api/signup/", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          firstName,
-          lastName,
-          password,
-          email,
-        }),
+      .post("https://worthysquad.herokuapp.com/api/user/signup", {
+        firstName,
+        lastName,
+        password,
+        email,
       })
       .then((response) => {
         // setName(response.data);

@@ -40,25 +40,27 @@ class EventProvider extends Component {
   //get the list of category types
 
   filterItem = (category) => {
-    let tempEvents = [];
-    Events.forEach((item) => {
-      const singleItem = { ...item }; //copying the values present in item and not referencing it.
-      tempEvents = [...tempEvents, singleItem];
-    });
+    // let tempEvents = [];
+    // Events.forEach((item) => {
+    //   const singleItem = { ...item }; //copying the values present in item and not referencing it.
+    //   tempEvents = [...tempEvents, singleItem];
+    // });
     if (category === "All") {
       this.setState(() => {
-        return { event: tempEvents };
+        return { events: Events };
       });
       // this.setEvents(Events);
       // return;
     }
-    const updatedList = tempEvents.filter((curElem) => {
+    console.log(Events);
+    const updatedList = Events.filter((curElem) => {
       return curElem.category === category; //only those data is filtered whose category matches with the input category
     });
     // this.setEvents(updatedList); //this will put the value of updated list in setEvents  which in turn change the value of eventsData and only updatedlist values will be displayed
-    this.setState(() => {
-      return { event: updatedList };
+    this.setState({
+      events: updatedList,
     });
+    console.log(updatedList);
   };
 
   //function to get items of particular id

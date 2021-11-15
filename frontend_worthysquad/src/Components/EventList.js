@@ -10,6 +10,7 @@ const EventList = () => {
         <div className="row g-5">
           <EventConsumer>
             {(value) => {
+              console.log({ value });
               return value.events.map((event) => {
                 return <Event key={event.id} event={event} />;
               });

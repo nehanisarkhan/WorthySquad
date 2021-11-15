@@ -1,9 +1,19 @@
 import React, { useState } from "react";
-
+// import Axios from "axios";
 import { Form, Col, Button, Row } from "react-bootstrap";
 
 function Donate() {
+  // const [donator, setDonator] = useState([]);
   const [inputs, setInputs] = useState([]);
+
+  // useEffect(() => {
+  //   Axios.get(
+  //     "https://api.unsplash.com/photos?client_id=Oao6keF4wun5THuxZD4REm-dENk6g-AClOvwhp-eet4&per_page=30&pages=3"
+  //   ).then((data) => {
+  //     setDonator(data.data);
+  //     console.log(data);
+  //   });
+  // }, []);
 
   const handleChange = (event) => {
     const name = event.target.name;
