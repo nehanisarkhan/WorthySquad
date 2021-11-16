@@ -11,7 +11,7 @@ const Event = (props) => {
       <React.Fragment>
         <EventConsumer>
           {(value) => (
-            <Card style={{ width: "16rem" }}>
+            <Card style={{ width: "16rem", marginLeft: "30px" }}>
               <Card.Img variant="top" src={img} />
               <Card.Body>
                 <Card.Title className="text-capitalize">{title}</Card.Title>

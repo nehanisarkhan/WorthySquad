@@ -3,7 +3,7 @@ import Footer from "..";
 
 export const Container = styled.div`
   padding: 80px 60px;
-  background: #cdd0cb;
+  background: #5e616a;
   @media (max-width: 1000px) {
     padding: 70px 30px;
   }

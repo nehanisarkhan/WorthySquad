@@ -1,15 +1,35 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 import { Form, Col, Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Login() {
-  const [inputs, setInputs] = useState({});
+  // const [inputs, setInputs] = useState({});
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
+  const submit = (e) => {
+    e.preventDefault();
+    console.log("values", email);
+    axios
+      .post("https://worthysquad.herokuapp.com/api/user/signin/", {
+        password,
+        email,
+      })
+      .then((response) => {
+        console.log(response.data, "heloooo");
+        history.push("/");
+      })
+      .catch((err) => console.error(err));
+    console.log(email);
   };
+
+  // const handleChange = (event) => {
+  //   const name = event.target.name;
+  //   const value = event.target.value;
+  //   setInputs((values) => ({ ...values, [name]: value }));
+  // };
 
   const [validated, setValidated] = useState(false);
 
@@ -19,18 +39,25 @@ function Login() {
       event.preventDefault();
       event.stopPropagation();
     }
-    console.log(inputs);
+
     setValidated(true);
   };
+
+  const history = useHistory();
 
   return (
     <div
       style={{
         display: "grid",
         placeContent: "center",
-        marginTop: "80px",
+        marginTop: "200px",
+        marginLeft: "auto",
+        marginRight: "auto",
+
         border: "1px solid gray",
         padding: "10px",
+        width: "500px",
+        height: "300px",
       }}
     >
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -40,10 +67,8 @@ function Login() {
             required
             type="text"
             placeholder="Email"
-            defaultValue=""
-            name="email"
-            value={inputs.email || ""}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
@@ -57,17 +82,19 @@ function Login() {
             required
             type="text"
             placeholder="Password"
-            defaultValue=""
-            name="password"
-            value={inputs.password || ""}
-            onChange={handleChange}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
 
-        <Button variant="secondary" type="submit">
+        <Button variant="secondary" type="submit" onClick={submit}>
           Login Now
         </Button>
+        <p>
+          Not registered ? <Link to="/signup">Sign-Up </Link>
+          Now !
+        </p>
       </Form>
     </div>
   );

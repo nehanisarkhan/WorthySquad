@@ -76,11 +76,12 @@ function Homepage() {
             marginLeft: "100px",
             marginRight: "auto",
             marginTop: "50px",
+            color: "#5E616A",
           }}
         >
           <p style={{ width: "50%" }}>
             <img
-              src="https://m.media-amazon.com/images/I/71bNsWlkyeL._SL1500_.jpg"
+              src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"
               alt="Pineapple"
               style={{
                 width: "170px",
@@ -93,9 +94,8 @@ function Homepage() {
                 borderColor: "black",
               }}
             />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae
-            scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices
+            “Easy to utilize the resources, and be the beacon of change in
+            someone’s life”
           </p>
         </div>
         <div
@@ -104,11 +104,12 @@ function Homepage() {
             justifyContent: "flex-end",
             // marginLeft: "auto",
             marginRight: "100px",
+            color: "#5E616A",
           }}
         >
           <p style={{ width: "50%" }}>
             <img
-              src="https://m.media-amazon.com/images/I/71bNsWlkyeL._SL1500_.jpg"
+              src="https://images.unsplash.com/photo-1591522810850-58128c5fb089?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNoYXJpdHl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
               alt="Pineapple"
               style={{
                 width: "170px",
@@ -119,11 +120,13 @@ function Homepage() {
                 borderRadius: "50%",
                 borderWidth: "2px",
                 borderColor: "black",
+                color: "#5E616A",
               }}
             />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae
-            scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices
+            “Before, people were unable to judge where to go to find and
+            contribute to social works which are genuine and there's
+            transparency in the funds being utilized for the right cause, so
+            through our app we would bridge that gap”
           </p>
         </div>
         <div
@@ -133,11 +136,12 @@ function Homepage() {
             marginLeft: "100px",
             marginRight: "auto",
             marginBottom: "30px",
+            color: "#5E616A",
           }}
         >
           <p style={{ width: "50%" }}>
             <img
-              src="https://m.media-amazon.com/images/I/71bNsWlkyeL._SL1500_.jpg"
+              src="https://images.unsplash.com/photo-1608555855762-2b657eb1c348?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2hhcml0eXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
               alt="Pineapple"
               style={{
                 width: "170px",
@@ -150,9 +154,9 @@ function Homepage() {
                 borderColor: "black",
               }}
             />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae
-            scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices
+            “Folks who need a sense of meaning and a job that makes an impact to
+            feel fulfilled, even if that job is less financially rewarding than
+            others”
           </p>
         </div>
         <h3

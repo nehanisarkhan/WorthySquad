@@ -4,26 +4,33 @@ import { EventConsumer } from "../Context";
 const Category = ({ list }) => {
   return (
     <>
-      <EventConsumer>
-        {(value) => (
-          <Nav>
-            <ButtonGroup className="mb-2">
-              {list.map((curElem) => {
-                return (
-                  <Button
-                    key={curElem.id}
-                    className="text-capitalize"
-                    variant="secondary"
-                    onClick={() => value.filterItem(curElem)}
-                  >
-                    {curElem}
-                  </Button>
-                );
-              })}
-            </ButtonGroup>
-          </Nav>
-        )}
-      </EventConsumer>
+      <div
+        style={{
+          display: "grid",
+          placeContent: "center",
+        }}
+      >
+        <EventConsumer>
+          {(value) => (
+            <Nav>
+              <ButtonGroup className="mb-2">
+                {list.map((curElem) => {
+                  return (
+                    <Button
+                      key={curElem.id}
+                      className="text-capitalize"
+                      variant="secondary"
+                      onClick={() => value.filterItem(curElem)}
+                    >
+                      {curElem}
+                    </Button>
+                  );
+                })}
+              </ButtonGroup>
+            </Nav>
+          )}
+        </EventConsumer>
+      </div>
     </>
   );
 };
