@@ -13,6 +13,7 @@ import Volunteer from "./Components/Volunteer";
 import About from "./Components/About";
 import DonorList from "./Components/DonorList";
 import VolunteerList from "./Components/VolunteerList";
+import Donatepage from "./Donatepage";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/about" component={About}></Route>
         <Route path="/Login" component={Login}></Route>
         <Route path="/SignUp" component={SignUp}></Route>
+        <Route path="/Donatepage" component={Donatepage}></Route>
       </Switch>
     </>
   );
