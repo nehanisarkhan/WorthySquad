@@ -1,16 +1,29 @@
 import React, { useState } from "react";
-
+import axios from "axios";
 import { Form, Col, Button, Row } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 
 function Volunteer() {
-  const [inputs, setInputs] = useState([]);
+  const [volunteer_name, setName] = useState("");
+  const [eventName, setEventName] = useState("");
+  const [email, setEmail] = useState("");
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
+  const submit = (e) => {
+    e.preventDefault();
+    console.log("values", volunteer_name);
+    axios
+      .post("https://worthysquad.herokuapp.com/api/volunteer/newVolunteer/", {
+        volunteer_name,
+        eventName,
+        email,
+      })
+      .then((response) => {
+        console.log(response.data, "success");
+        history.push("/");
+      })
+      .catch((err) => console.error(err));
+    console.log(email);
   };
-
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
@@ -19,9 +32,10 @@ function Volunteer() {
       event.preventDefault();
       //   event.stopPropagation();
     }
-    console.log(inputs);
     setValidated(true);
   };
+
+  const history = useHistory();
 
   return (
     <div
@@ -47,24 +61,9 @@ function Volunteer() {
               <Form.Control
                 required
                 type="text"
-                placeholder="First Name"
-                name="fname"
-                value={inputs.fname || ""}
-                onChange={handleChange}
-              />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-            </Form.Group>
-          </Col>
-          <Col>
-            <Form.Group controlId="validationCustom02">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                required
-                type="text"
-                placeholder="Last Name"
-                name="lname"
-                value={inputs.lname || ""}
-                onChange={handleChange}
+                placeholder="Name"
+                value={volunteer_name}
+                onChange={(e) => setName(e.target.value)}
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
@@ -78,8 +77,8 @@ function Volunteer() {
             type="text"
             placeholder="Email"
             name="email"
-            value={inputs.email || ""}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
@@ -93,85 +92,12 @@ function Volunteer() {
             required
             type="text"
             placeholder="Event Name"
-            name="event"
-            value={inputs.event || ""}
-            onChange={handleChange}
+            value={eventName}
+            onChange={(e) => setEventName(e.target.value)}
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group
-          as={Col}
-          controlId="validationCustom05"
-          //   style={{ marginTop: "5px", marginBottom: "8px" }}
-        >
-          <Form.Label>ID proof</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Id No."
-            name="id"
-            value={inputs.id || ""}
-            onChange={handleChange}
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group
-          as={Col}
-          controlId="validationCustom06"
-          //   style={{ marginTop: "5px", marginBottom: "8px" }}
-        >
-          <Form.Label>Contact No.</Form.Label>
-          <Form.Control
-            required
-            type="telephone"
-            placeholder="Phone number"
-            name="Contact No."
-            value={inputs.telephone || ""}
-            onChange={handleChange}
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-        <Row>
-          <Col>
-            <Form.Group
-              controlId="validationCustom07"
-              //   style={{ marginTop: "5px", marginBottom: "8px" }}
-            >
-              <Form.Label>Address</Form.Label>
-              <Form.Control
-                required
-                type="Address"
-                placeholder="1234 Main st"
-                name="Address"
-                value={inputs.Address || ""}
-                onChange={handleChange}
-              />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-            </Form.Group>
-          </Col>
-          <Col>
-            <Form.Group
-              controlId="validationCustom08-"
-              //   style={{ marginTop: "5px", marginBottom: "8px" }}
-            >
-              <Form.Label>City</Form.Label>
-              <Form.Control
-                required
-                type="city"
-                placeholder="City name"
-                name="city"
-                value={inputs.city || ""}
-                onChange={handleChange}
-              />
 
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-            </Form.Group>
-          </Col>
-        </Row>
-
-        {/* <Button variant="secondary" type="submit" style={{ marginTop: "8px" }}>
-          SignUp
-        </Button> */}
         <div
           style={{
             // backgroundColor: "green",
@@ -181,13 +107,12 @@ function Volunteer() {
             alignItems: "center",
           }}
         >
-          {" "}
           <br />
           <br />
           <br />
-          <Button variant="secondary" type="submit">
-            Donate
-          </Button>{" "}
+          <Button variant="secondary" type="submit" onClick={submit}>
+            Volunteer
+          </Button>
         </div>
       </Form>
     </div>

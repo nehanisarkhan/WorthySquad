@@ -95,3 +95,12 @@ class EventProvider extends Component {
 const EventConsumer = EventContext.Consumer;
 
 export { EventProvider, EventConsumer };
+
+//  useEffect(() => {
+//   Axios.get(
+//     "https://api.unsplash.com/photos?client_id=Oao6keF4wun5THuxZD4REm-dENk6g-AClOvwhp-eet4&per_page=30&pages=3"
+//   ).then((data) => {
+//     setDonator(data.data);
+//     console.log(data);
+//   });
+// }, []);

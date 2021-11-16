@@ -1,24 +1,30 @@
 import React, { useState } from "react";
-// import Axios from "axios";
+import axios from "axios";
 import { Form, Col, Button, Row } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 
 function Donate() {
-  // const [donator, setDonator] = useState([]);
-  const [inputs, setInputs] = useState([]);
+  const [donator_name, setName] = useState("");
+  const [amount, setAmount] = useState("");
+  const [eventName, setEventName] = useState("");
+  const [email, setEmail] = useState("");
 
-  // useEffect(() => {
-  //   Axios.get(
-  //     "https://api.unsplash.com/photos?client_id=Oao6keF4wun5THuxZD4REm-dENk6g-AClOvwhp-eet4&per_page=30&pages=3"
-  //   ).then((data) => {
-  //     setDonator(data.data);
-  //     console.log(data);
-  //   });
-  // }, []);
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
+  const submit = (e) => {
+    e.preventDefault();
+    console.log("values", donator_name);
+    axios
+      .post("https://worthysquad.herokuapp.com/api/donator/newDonator/", {
+        donator_name,
+        amount,
+        eventName,
+        email,
+      })
+      .then((response) => {
+        console.log(response.data, "success");
+        history.push("/");
+      })
+      .catch((err) => console.error(err));
+    console.log(email);
   };
 
   const [validated, setValidated] = useState(false);
@@ -29,9 +35,10 @@ function Donate() {
       event.preventDefault();
       //   event.stopPropagation();
     }
-    console.log(inputs);
+
     setValidated(true);
   };
+  const history = useHistory();
 
   return (
     <div
@@ -57,24 +64,9 @@ function Donate() {
               <Form.Control
                 required
                 type="text"
-                placeholder="First Name"
-                name="fname"
-                value={inputs.fname || ""}
-                onChange={handleChange}
-              />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-            </Form.Group>
-          </Col>
-          <Col>
-            <Form.Group controlId="validationCustom02">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                required
-                type="text"
-                placeholder="Last Name"
-                name="lname"
-                value={inputs.lname || ""}
-                onChange={handleChange}
+                placeholder="Name"
+                value={donator_name}
+                onChange={(e) => setName(e.target.value)}
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
@@ -87,9 +79,8 @@ function Donate() {
             required
             type="text"
             placeholder="Email"
-            name="email"
-            value={inputs.email || ""}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
@@ -99,9 +90,8 @@ function Donate() {
             required
             type="text"
             placeholder="Event Name"
-            name="event"
-            value={inputs.event || ""}
-            onChange={handleChange}
+            value={eventName}
+            onChange={(e) => setEventName(e.target.value)}
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
@@ -110,56 +100,12 @@ function Donate() {
           <Form.Control
             required
             type="numbers"
-            placeholder="Amount to be Paid"
-            name="Amount"
-            value={inputs.Amount || ""}
-            onChange={handleChange}
+            placeholder="Amount to be donated"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} controlId="validationCustom06">
-          <Form.Label>Contact No.</Form.Label>
-          <Form.Control
-            required
-            type="telephone"
-            placeholder="Phone number"
-            name="Contact No."
-            value={inputs.telephone || ""}
-            onChange={handleChange}
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-        <Row>
-          <Col>
-            <Form.Group controlId="validationCustom07">
-              <Form.Label>Address</Form.Label>
-              <Form.Control
-                required
-                type="Address"
-                placeholder="1234 Main st"
-                name="Address"
-                value={inputs.Address || ""}
-                onChange={handleChange}
-              />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-            </Form.Group>
-          </Col>
-          <Col>
-            <Form.Group controlId="validationCustom08-">
-              <Form.Label>City</Form.Label>
-              <Form.Control
-                required
-                type="city"
-                placeholder="City name"
-                name="city"
-                value={inputs.city || ""}
-                onChange={handleChange}
-              />
-
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-            </Form.Group>
-          </Col>
-        </Row>
 
         {/* <Button variant="secondary" type="submit" style={{ marginTop: "8px" }}>
           SignUp
@@ -175,7 +121,7 @@ function Donate() {
           <br />
           <br />
           <br />
-          <Button variant="secondary" type="submit">
+          <Button variant="secondary" type="submit" onClick={submit}>
             Donate
           </Button>{" "}
         </div>

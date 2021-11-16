@@ -1,6 +1,7 @@
 import { useState } from "react";
 // import "./App.css";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -22,21 +23,13 @@ function SignUp() {
         // setName(response.data);
         // setLname(response.data);
 
-        console.log(response.data, "heloooo");
+        console.log(response.data, "success");
+        history.push("/Login");
       })
       .catch((err) => console.error(err));
   };
 
-  // try {
-  //   await axios.post("https://worthysquad.herokuapp.com/api/signup", {
-  //     firstName,
-  //     lastName,
-  //     email,
-  //     password,
-  //   });
-  // } catch (error) {
-  //   console.log(error);
-  // }
+  const history = useHistory();
 
   return (
     <div>
