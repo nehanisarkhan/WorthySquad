@@ -21,7 +21,7 @@ function Donate() {
       })
       .then((response) => {
         console.log(response.data, "success");
-        history.push("/");
+        history.push("/payment");
       })
       .catch((err) => console.error(err));
     console.log(email);
@@ -123,7 +123,7 @@ function Donate() {
           <br />
           <Button variant="secondary" type="submit" onClick={submit}>
             Donate
-          </Button>{" "}
+          </Button>
         </div>
       </Form>
     </div>
