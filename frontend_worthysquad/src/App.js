@@ -13,7 +13,7 @@ import Volunteer from "./Components/Volunteer";
 import About from "./Components/About";
 import DonorList from "./Components/DonorList";
 import VolunteerList from "./Components/VolunteerList";
-import Donatepage from "./Donatepage";
+import Donatepage from "./Components/Donatepage";
 
 const App = () => {
   return (
