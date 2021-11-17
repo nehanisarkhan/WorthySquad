@@ -20,6 +20,7 @@ function Login() {
       .then((response) => {
         console.log(response.data, "heloooo");
         history.push("/");
+        alert("Welcome");
       })
       .catch((err) => console.error(err));
     console.log(email);

@@ -11,9 +11,10 @@ import MainList from "./Components/MainList";
 import Donate from "./Components/Donate";
 import Volunteer from "./Components/Volunteer";
 import About from "./Components/About";
-import DonorList from "./Components/DonorList";
+// import DonorList from "./Components/DonorList";
 import VolunteerList from "./Components/VolunteerList";
 import Donatepage from "./Donatepage";
+import Payment from "./Components/Payment";
 
 const App = () => {
   return (
@@ -25,13 +26,14 @@ const App = () => {
         <Route path="/eventlist" component={MainList}></Route>
         <Route path="/eventdetails" component={EventDetails}></Route>
         <Route path="/donate" component={Donate}></Route>
-        <Route path="/donatorlist" component={DonorList}></Route>
+        <Route path="/donatorlist" component={Donatepage}></Route>
         <Route path="/volunteer" component={Volunteer}></Route>
         <Route path="/volunteerlist" component={VolunteerList}></Route>
         <Route path="/about" component={About}></Route>
+        <Route path="/payment" component={Payment}></Route>
         <Route path="/Login" component={Login}></Route>
         <Route path="/SignUp" component={SignUp}></Route>
-        <Route path="/Donatepage" component={Donatepage}></Route>
+        {/* <Route path="/Donatepage" component={Donatepage}></Route> */}
       </Switch>
     </>
   );

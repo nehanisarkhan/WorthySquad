@@ -11,13 +11,8 @@ const uniqueList = [
 ];
 
 const EventContext = React.createContext(); //context object
-//context object has two components :-
-//Provider
-//Consumer
 
 class EventProvider extends Component {
-  //state a unique reference throughout the app
-
   state = {
     events: [],
     detailEvent: detailEvent,
@@ -47,7 +42,8 @@ class EventProvider extends Component {
     // });
     if (category === "All") {
       this.setState(() => {
-        return { events: Events };
+        this.setEvents();
+        // return { events: Events };
       });
       // this.setEvents(Events);
       // return;

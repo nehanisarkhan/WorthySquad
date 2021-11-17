@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Form, Col, Button, Row } from "react-bootstrap";
+import { Form, Col, Button, Row, Nav } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 
 function Donate() {
@@ -121,9 +121,11 @@ function Donate() {
           <br />
           <br />
           <br />
-          <Button variant="secondary" type="submit" onClick={submit}>
-            Donate
-          </Button>{" "}
+          <Nav.Link href="/payment">
+            <Button variant="secondary" type="submit" onClick={submit}>
+              Donate
+            </Button>
+          </Nav.Link>
         </div>
       </Form>
     </div>
