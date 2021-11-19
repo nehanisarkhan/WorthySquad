@@ -14,27 +14,27 @@ const EventContext = React.createContext(); //context object
 
 class EventProvider extends Component {
   //component lifecycle method
-  componentDidMount() {
-    fetch("https://worthysquad.herokuapp.com/api/event/getevents/")
-      .then((response) => response.json())
-      .then((eventlist) => {
-        // this.setEvents();
-        console.log("eventslist", eventlist);
-
-        this.setState({ events: eventlist });
-      });
-    console.log("eventsstate", this.state);
-  }
-
   state = {
     events: [],
     detailEvent: detailEvent,
     list: uniqueList,
   };
+  componentDidMount() {
+    this.setEvents();
+
+    // fetch("https://worthysquad.herokuapp.com/api/event/getevents/")
+    //   .then((response) => response.json())
+    //   .then((eventlist) => {
+    // console.log("eventslist", eventlist);
+
+    // this.setState({ events: eventlist });
+    // });
+    // console.log("eventsstate", this.state);
+  }
 
   setEvents = () => {
     let tempEvents = [];
-    this.state.events.forEach((item) => {
+    Events.forEach((item) => {
       const singleItem = { ...item }; //copying the values present in item and not referencing it.
       tempEvents = [...tempEvents, singleItem];
     });
@@ -94,12 +94,3 @@ class EventProvider extends Component {
 const EventConsumer = EventContext.Consumer;
 
 export { EventProvider, EventConsumer };
-
-//  useEffect(() => {
-//   Axios.get(
-//     "https://api.unsplash.com/photos?client_id=Oao6keF4wun5THuxZD4REm-dENk6g-AClOvwhp-eet4&per_page=30&pages=3"
-//   ).then((data) => {
-//     setDonator(data.data);
-//     console.log(data);
-//   });
-// }, []);

@@ -4,10 +4,10 @@ import { Form, Col, Button, Nav } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 // import { Link } from "react-router-dom";
 // import { actionTypes } from "./reducer";
-import { useStateValue } from "./StateProvider";
+// import { useStateValue } from "./StateProvider";
 
 function Login() {
-  const [state, dispatch] = useStateValue();
+  // const [state, dispatch] = useStateValue();
 
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -33,12 +33,6 @@ function Login() {
       .catch((err) => console.error(err));
     console.log(email);
   };
-
-  // const handleChange = (event) => {
-  //   const name = event.target.name;
-  //   const value = event.target.value;
-  //   setInputs((values) => ({ ...values, [name]: value }));
-  // };
 
   const [validated, setValidated] = useState(false);
 
@@ -101,7 +95,7 @@ function Login() {
           Login Now
         </Button>
         <p>
-          Not registered ? <Nav.Link to="/signup">Sign-Up </Nav.Link>
+          Not registered ? <Nav.Link href="/signup">Sign-Up </Nav.Link>
           Now !
         </p>
       </Form>
