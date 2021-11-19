@@ -6,13 +6,13 @@ const EventDetails = (props) => {
   return (
     <EventConsumer>
       {(value) => {
-        const { title, img, description } = value.detailEvent;
+        const { title, eventPicture, description } = value.detailEvent;
         return (
           <Container className="p-5 m-5 g-5">
             <Card>
               <Card.Img
                 variant="top"
-                src={img}
+                src={eventPicture}
                 fluid
                 style={{
                   width: "30rem",

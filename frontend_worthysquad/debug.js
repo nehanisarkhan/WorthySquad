@@ -62,34 +62,31 @@ const Header = () => {
 
 export default Header;
 
+// import React from "react";
+// import { Card, Button, Row, Col } from "react-bootstrap";
 
-
-
-import React from "react";
-import { Card, Button, Row, Col } from "react-bootstrap";
-
-const Event = ({ events }) => {
-  return (
-    <>
-      {events.map((item) => {
-        return (
-          <React.Fragment>
-            <Row className="g-3">
-              <Col>
-                <Card style={{ width: "16rem" }} className=" g-3">
-                  <Card.Img variant="top" src={item.img} />
-                  <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
-                    {/* <Card.Text>{item.description}</Card.Text> */}
-                    <Button variant="primary">Check Details</Button>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          </React.Fragment>
-        );
-      })}
-    </>
-  );
-};
-export default Event;
+// const Event = ({ events }) => {
+//   return (
+//     <>
+//       {events.map((item) => {
+//         return (
+//           <React.Fragment>
+//             <Row className="g-3">
+//               <Col>
+//                 <Card style={{ width: "16rem" }} className=" g-3">
+//                   <Card.Img variant="top" src={item.img} />
+//                   <Card.Body>
+//                     <Card.Title>{item.title}</Card.Title>
+//                     {/* <Card.Text>{item.description}</Card.Text> */}
+//                     <Button variant="primary">Check Details</Button>
+//                   </Card.Body>
+//                 </Card>
+//               </Col>
+//             </Row>
+//           </React.Fragment>
+//         );
+//       })}
+//     </>
+//   );
+// };
+// export default Event;

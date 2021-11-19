@@ -13,18 +13,28 @@ const uniqueList = [
 const EventContext = React.createContext(); //context object
 
 class EventProvider extends Component {
+  //component lifecycle method
+  componentDidMount() {
+    fetch("https://worthysquad.herokuapp.com/api/event/getevents/")
+      .then((response) => response.json())
+      .then((eventlist) => {
+        // this.setEvents();
+        console.log("eventslist", eventlist);
+
+        this.setState({ events: eventlist });
+      });
+    console.log("eventsstate", this.state);
+  }
+
   state = {
     events: [],
     detailEvent: detailEvent,
     list: uniqueList,
   };
-  //component lifecycle method
-  componentDidMount() {
-    this.setEvents(); //this will ensure only the copies of data is mounted and not the actual data so the actual data is kept untouched.
-  }
+
   setEvents = () => {
     let tempEvents = [];
-    Events.forEach((item) => {
+    this.state.events.forEach((item) => {
       const singleItem = { ...item }; //copying the values present in item and not referencing it.
       tempEvents = [...tempEvents, singleItem];
     });
@@ -32,21 +42,15 @@ class EventProvider extends Component {
       return { events: tempEvents };
     });
   };
+
   //get the list of category types
 
   filterItem = (category) => {
-    // let tempEvents = [];
-    // Events.forEach((item) => {
-    //   const singleItem = { ...item }; //copying the values present in item and not referencing it.
-    //   tempEvents = [...tempEvents, singleItem];
-    // });
     if (category === "All") {
       this.setState(() => {
         this.setEvents();
         // return { events: Events };
       });
-      // this.setEvents(Events);
-      // return;
     }
     console.log(Events);
     const updatedList = Events.filter((curElem) => {
@@ -77,7 +81,6 @@ class EventProvider extends Component {
       <EventContext.Provider
         value={{
           ...this.state,
-          //used 'this' keyword since handleDetail is present inside a class
           handleDetail: this.handleDetail,
           filterItem: this.filterItem,
         }}

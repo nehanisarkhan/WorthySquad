@@ -13,30 +13,40 @@ import Volunteer from "./Components/Volunteer";
 import About from "./Components/About";
 // import DonorList from "./Components/DonorList";
 import VolunteerList from "./Components/VolunteerList";
-import Donatepage from "./Donatepage";
+// import { useStateValue } from "./Components/StateProvider";
 import Payment from "./Components/Payment";
+// import Donatepage from "./Components/Donatepage";
 
 const App = () => {
+  // const [{ user }, dispatch] = useStateValue();
+
   return (
     <>
-      {/* <Location /> */}
+      {/* {!user ? (
+        <Login />
+      ) : (
+        <> */}
       <Header />
       <Switch>
         <Route exact path="/" component={Homepage}></Route>
         <Route path="/eventlist" component={MainList}></Route>
         <Route path="/eventdetails" component={EventDetails}></Route>
         <Route path="/donate" component={Donate}></Route>
-        <Route path="/donatorlist" component={Donatepage}></Route>
+        {/* <Route path="/donatorlist" component={Donatepage}></Route> */}
         <Route path="/volunteer" component={Volunteer}></Route>
         <Route path="/volunteerlist" component={VolunteerList}></Route>
         <Route path="/about" component={About}></Route>
         <Route path="/payment" component={Payment}></Route>
         <Route path="/Login" component={Login}></Route>
-        <Route path="/SignUp" component={SignUp}></Route>
+        <Route path="/signup" component={SignUp}></Route>
         {/* <Route path="/Donatepage" component={Donatepage}></Route> */}
       </Switch>
     </>
+    //   )}
+    // </>
   );
 };
 
 export default App;
+
+// .then((json) => this.setState({ events: json.data }));

@@ -4,7 +4,7 @@ import { EventConsumer } from "../Context";
 import { Link } from "react-router-dom";
 
 const Event = (props) => {
-  const { id, title, img, category } = props.event;
+  const { id, eventTitle, eventPicture, category } = props.event;
 
   return (
     <>
@@ -12,9 +12,17 @@ const Event = (props) => {
         <EventConsumer>
           {(value) => (
             <Card style={{ width: "16rem", marginLeft: "30px" }}>
-              <Card.Img variant="top" src={img} />
+              <img
+                src={eventPicture}
+                alt="nothing to show"
+                widht="100px"
+                height="100px"
+              />
+              {/* <Card.Img variant="top" src={eventPicture} /> */}
               <Card.Body>
-                <Card.Title className="text-capitalize">{title}</Card.Title>
+                <Card.Title className="text-capitalize">
+                  {eventTitle}
+                </Card.Title>
                 <Card.Text className="text-muted text-capitalize">
                   {category}
                 </Card.Text>

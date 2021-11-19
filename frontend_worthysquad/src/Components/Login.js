@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Form, Col, Button } from "react-bootstrap";
+import { Form, Col, Button, Nav } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+// import { actionTypes } from "./reducer";
+import { useStateValue } from "./StateProvider";
 
 function Login() {
-  // const [inputs, setInputs] = useState({});
+  const [state, dispatch] = useStateValue();
+
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
@@ -18,9 +21,14 @@ function Login() {
         email,
       })
       .then((response) => {
-        console.log(response.data, "heloooo");
+        console.log(response.data, "success");
+
         history.push("/");
         alert("Welcome");
+        // dispatch({
+        //   type: actionTypes.SET_USER,
+        //   user: response.data,
+        // });
       })
       .catch((err) => console.error(err));
     console.log(email);
@@ -93,7 +101,7 @@ function Login() {
           Login Now
         </Button>
         <p>
-          Not registered ? <Link to="/signup">Sign-Up </Link>
+          Not registered ? <Nav.Link to="/signup">Sign-Up </Nav.Link>
           Now !
         </p>
       </Form>

@@ -1,12 +1,12 @@
 export const Events = [
   {
     id: 1,
-    location: {
-      lat: "12",
-      long: "13",
-    },
+    // location: {
+    //   lat: "12",
+    //   long: "13",
+    // },
     category: "food and hunger",
-    title: "Feeding From Far-Ration Distribution Amid Lockdown",
+    title: "Feed From Far-Ration Distribution Amid Lockdown",
     img: "https://bsmedia.business-standard.com/_media/bs/img/article/2017-08/25/full/1503608938-598.jpg",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste at iure quam eligendi dolorum. Tempore animi consequatur ut vitae esse ipsa eligendi illo explicabo delectus beatae, sint provident? Iure, minima!",
