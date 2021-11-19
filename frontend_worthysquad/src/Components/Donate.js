@@ -21,7 +21,7 @@ function Donate() {
       })
       .then((response) => {
         console.log(response.data, "success");
-        history.push("/");
+        history.push("/payment");
       })
       .catch((err) => console.error(err));
     console.log(email);
@@ -117,10 +117,6 @@ function Donate() {
             alignItems: "center",
           }}
         >
-          {" "}
-          <br />
-          <br />
-          <br />
           <Nav.Link href="/payment">
             <Button variant="secondary" type="submit" onClick={submit}>
               Donate

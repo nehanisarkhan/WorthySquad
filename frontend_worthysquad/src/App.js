@@ -9,13 +9,15 @@ import Homepage from "./Homepage";
 import MainList from "./Components/MainList";
 // import Location from "./Location";
 import Donate from "./Components/Donate";
+import Payment from "./Components/Payment";
 import Volunteer from "./Components/Volunteer";
 import About from "./Components/About";
 // import DonorList from "./Components/DonorList";
 import VolunteerList from "./Components/VolunteerList";
 // import { useStateValue } from "./Components/StateProvider";
-import Payment from "./Components/Payment";
 // import Donatepage from "./Components/Donatepage";
+
+import Donatepage from "./Components/Donatepage";
 
 const App = () => {
   // const [{ user }, dispatch] = useStateValue();
